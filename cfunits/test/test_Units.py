@@ -15,8 +15,8 @@ from cfunits import Units
 class UnitsTest(unittest.TestCase):
     """Tests the `Units` class."""
 
-    def test_Units___eq__(self):
-        """Tests the `___eq__` operator on `Units`."""
+    def test_Units__eq__(self):
+        """Tests the `__eq__` operator on `Units`."""
         self.assertEqual(Units(""), Units(""))
         self.assertEqual(Units("18"), Units("18"))
         self.assertEqual(Units("1"), Units("1"))
@@ -420,7 +420,6 @@ class UnitsTest(unittest.TestCase):
         u = Units("bad units")
         self.assertEqual(tokenize(u), tokenize(Units("bad units")))
         self.assertNotEqual(tokenize(u), tokenize(Units("worse units")))
-
 
 if __name__ == "__main__":
     print("cfunits version:", cfunits.__version__)

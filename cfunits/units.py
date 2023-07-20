@@ -973,7 +973,7 @@ class Units:
     def __bool__(self):
         """Truth value testing and the built-in operation ``bool``.
 
-        x.__bool__() is logically equivalent to x!=0
+        x.__bool__() is logically equivalent bool(x)
 
         """
         return self._ut_unit is not None
@@ -1849,6 +1849,9 @@ class Units:
         False
 
         """
+        if not (self._isvalid and other._isvalid):
+            # Invalid units are never equivalent
+            return False
         #        if not self.isvalid or not other.isvalid:
         #            return False
 
@@ -2369,6 +2372,10 @@ class Units:
         False
 
         """
+        if not (self._isvalid and other._isvalid):
+            # Invalid units are never equal
+            return False
+
         isreftime1 = self._isreftime
         isreftime2 = other._isreftime
 
