@@ -1849,42 +1849,12 @@ class Units:
         False
 
         """
-        if not (self._isvalid and other._isvalid):
-            # Invalid units are never equivalent
-            return False
-        #        if not self.isvalid or not other.isvalid:
-        #            return False
+#        if not (self._isvalid and other._isvalid):
+#            # Invalid units are never equivalent
+#            return False
 
         isreftime1 = self._isreftime
         isreftime2 = other._isreftime
-
-        #        if isreftime1 and isreftime2:
-        #            # Both units are reference-time units
-        #            if self._canonical_calendar != other._canonical_calendar:
-        #                if verbose:
-        #                    print("{}: Incompatible calendars: {!r}, {!r}".format(
-        #                        self.__class__.__name__,
-        #                        self._calendar, other._calendar))  # pragma: no cover
-        #                return False
-        #
-        #            reftime0 = getattr(self, 'reftime', None)
-        #            reftime1 = getattr(other, 'reftime', None)
-        #            if reftime0 != reftime1:
-        #                if verbose:
-        #                    print(
-        #                        "{}: Different reference date-times: "
-        #                        "{!r}, {!r}".format(
-        #                            self.__class__.__name__,
-        #                            reftime0, reftime1
-        #                        )
-        #                    )  # pragma: no cover
-        #                return False
-        #
-        #        elif isreftime1 or isreftime2:
-        #            if verbose:
-        #                print("{}: Only one is reference time".format(
-        #                    self.__class__.__name__))  # pragma: no cover
-        #            return False
 
         if isreftime1 and isreftime2:
             # Both units are reference-time units
@@ -1907,32 +1877,8 @@ class Units:
                 print(
                     f"{self.__class__.__name__}: Only one is reference time"
                 )  # pragma: no cover
+
             return False
-
-        #        if not self.isvalid:
-        #            if verbose:
-        #                print(
-        #                    "{}: {!r} is not valid".format(
-        #                        self.__class__.__name__, self)
-        #                )  # pragma: no cover
-        #            return False
-        #
-        #        if not other.isvalid:
-        #            if verbose:
-        #                print(
-        #                    "{}: {!r} is not valid".format(
-        #                        self.__class__.__name__, other)
-        #                )  # pragma: no cover
-        #            return False
-
-        #         if isreftime1 and isreftime2:
-        #            # Both units are reference-time units
-        #            units0 = self._units
-        #            units1 = other._units
-        #            if units0 and units1 or (not units0 and not units1):
-        #                return self._calendar == other._calendar
-        #            else:
-        #                return False
 
         # Still here?
         if self._units is None and other._units is None:
@@ -2372,9 +2318,9 @@ class Units:
         False
 
         """
-        if not (self._isvalid and other._isvalid):
-            # Invalid units are never equal
-            return False
+#        if not (self._isvalid and other._isvalid):
+#            # Invalid units are never equal
+#            return False
 
         isreftime1 = self._isreftime
         isreftime2 = other._isreftime
