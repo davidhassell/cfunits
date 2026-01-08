@@ -1,3 +1,13 @@
+Version NEXTVERSION
+-------------
+
+**2026-??-??**
+
+* Remove legacy XML files
+  (https://github.com/NCAS-CMS/cfunits/issues/61)
+
+----
+
 Version 3.3.7
 -------------
 
